@@ -1,7 +1,7 @@
 import pygame, sys, pygame.color
 from pygame.locals import *
 from constants import *
-from button import Button
+from extras.button import Button
 
 pygame.init()
 

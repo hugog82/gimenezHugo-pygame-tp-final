@@ -1,6 +1,6 @@
 import pygame, sys
 from constants import *
-from auxiliar import Auxiliar
+from auxiliar import *
 from bullet import Bullet
 from background import Background
 
@@ -18,7 +18,6 @@ class Player:
         self.throw_left = Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Throw__00{0}.png",0,10,True,scale=p_scale)
         self.dead_right =Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Dead__00{0}.png",0,10,False,scale=p_scale)
         self.dead_left =Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Dead__00{0}.png",0,10,True,scale=p_scale)
-
                 
         self.frame = 0
         self.lives = 5
@@ -46,8 +45,8 @@ class Player:
         
         self.is_jump = False
         self.is_fall = False
-        self.is_shoot = False
-        self.is_knife = False
+        # self.is_shoot = False
+        # self.is_knife = False
         
         self.rect_collition = pygame.Rect(self.rect)
         self.rect_ground_collition = pygame.Rect(self.rect.x + self.rect.w /3,self.rect.y + self.rect.h -GROUND_RECT_H,self.rect.w /3,GROUND_RECT_H)

@@ -10,7 +10,7 @@ class Item:
         self.animation = self.image_list
         self.image = self.animation[self.frame]
         self.rect = self.image.get_rect()        
-    
+        
         self.rect.x = x
         self.rect.y = y
         self.rect_collition = pygame.Rect(self.rect)

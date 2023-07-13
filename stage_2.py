@@ -8,16 +8,16 @@ from score import *
 from bullet import *
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-flag = True
-time_game = 50
 
 pygame.init()
 
+flag = True
+time_game = 50
 event_time_1000_ms = pygame.USEREVENT
 pygame.time.set_timer(event_time_1000_ms,1000)
 
-event_time_shoot_2000_ms = pygame.USEREVENT +1
-pygame.time.set_timer(event_time_shoot_2000_ms,5000)
+event_time_shoot_5000_ms = pygame.USEREVENT +1
+pygame.time.set_timer(event_time_shoot_5000_ms,5000)
 
 clock = pygame.time.Clock()
 background = get_background()
@@ -48,7 +48,7 @@ while flag:
             sys.exit()
         if event.type == event_time_1000_ms:
             time_game -= 1
-        if event.type == event_time_shoot_2000_ms:
+        if event.type == event_time_shoot_5000_ms:
             for enemy in enemy_list:
                 if not enemy.is_dead:
                     if enemy.direction == DIRECTION_RIGHT:
@@ -104,13 +104,10 @@ while flag:
     elif player.energy <= 0:
         draw_text (screen, str("YOU LOSE!"), 100, SCREEN_WIDTH // 2,SCREEN_HEIGHT//2)
         
-    elif items_list == [] and enemy.energy <= 0:
+    elif enemy.lives == 0:
         draw_text (screen, str("YOU WIN!"), 100, SCREEN_WIDTH // 2, SCREEN_HEIGHT//2)
         victory_sound.play()
 
-        
-    # enemies update
-    # dibujar todo el nivel
                 
     pygame.display.flip()
     

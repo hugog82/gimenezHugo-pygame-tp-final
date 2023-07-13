@@ -31,11 +31,11 @@ def get_dynamic_platform ():
     dynamic_platforms_list.append(Dynamic_platform(x=800,y=400,speed_move=10,frame_rate_ms=50,move_rate_ms=50,p_scale=0.15))
     dynamic_platforms_list.append(Dynamic_platform(x=850,y=400,speed_move=10,frame_rate_ms=50,move_rate_ms=50,p_scale=0.15))
 
-    dynamic_platforms_list.append(Dynamic_platform(x=0,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
-    dynamic_platforms_list.append(Dynamic_platform(x=50,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
-    dynamic_platforms_list.append(Dynamic_platform(x=100,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
-    dynamic_platforms_list.append(Dynamic_platform(x=150,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
-    dynamic_platforms_list.append(Dynamic_platform(x=200,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
+    # dynamic_platforms_list.append(Dynamic_platform(x=0,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
+    # dynamic_platforms_list.append(Dynamic_platform(x=50,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
+    # dynamic_platforms_list.append(Dynamic_platform(x=100,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
+    # dynamic_platforms_list.append(Dynamic_platform(x=150,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
+    # dynamic_platforms_list.append(Dynamic_platform(x=200,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
 
     dynamic_platforms_list.append(Dynamic_platform(x=950,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
     dynamic_platforms_list.append(Dynamic_platform(x=1000,y=300,speed_move=0,frame_rate_ms=50,move_rate_ms=50,p_scale=0.18))
@@ -73,9 +73,6 @@ def get_item ():
     items_list.append(Item(path_diamond,0,2,x=700,y=150,width=25,height=25))
     items_list.append(Item(path_moonstone,0,2,x=750,y=150,width=25,height=25))
        
-       
-    items_list.append(Item(path_ruby,0,2,x=0,y=200,width=25,height=25))
-    items_list.append(Item(path_ruby,0,2,x=50,y=200,width=25,height=25))
     items_list.append(Item(path_ruby,0,2,x=100,y=200,width=25,height=25))
     items_list.append(Item(path_ruby,0,2,x=150,y=200,width=25,height=25))
     items_list.append(Item(path_ruby,0,2,x=200,y=200,width=25,height=25))
@@ -92,7 +89,7 @@ def get_item ():
 def get_enemy():
     
     enemy_list = []
-    enemy_list.append (Enemy_2(x=1100,y=GROUND_LEVEL,speed_walk=10,speed_run=16,gravity=8,frame_rate_ms=50,move_rate_ms=50,jump_power=30,jump_height=140,p_scale=0.07))
-    enemy_list.append (Enemy_4(x=50,y=50,speed_walk=8))
+    enemy_list.append (Enemy_2(x=600,y=380,speed_walk=8))
+    enemy_list.append (Enemy_4(x=10,y=200,speed_walk=15))
 
     return enemy_list

@@ -105,7 +105,7 @@ while flag:
     elif player.energy <= 0:
         draw_text (screen, str("YOU LOSE!"), 100, SCREEN_WIDTH // 2,SCREEN_HEIGHT//2)
         
-    elif items_list == [] and enemy.energy <= 0:
+    elif enemy.lives == 0:
         draw_text (screen, str("YOU WIN!"), 100, SCREEN_WIDTH // 2, SCREEN_HEIGHT//2)
         victory_sound.play()
 

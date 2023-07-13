@@ -6,7 +6,7 @@ from enemy import *
 
 
 def get_background():
-    bg = Background(0,0,SCREEN_SIZE,IMAGE_PATH +"bg.jpg")
+    bg = Background(0,0,SCREEN_SIZE,"assets/Background.png")
     
     return bg
 

@@ -1,6 +1,6 @@
 import pygame, sys, pygame.color
 from pygame.locals import *
-from button import *
+from extras.button import *
 from constants import *
 from auxiliar import *
 

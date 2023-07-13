@@ -2,7 +2,7 @@ import pygame
 from pygame.locals import *
 from constants import *
 #from gui_form import Form
-from gui_button import Button
+from extras.gui_button import Button
 #from gui_textbox import TextBox
 #from gui_progressbar import ProgressBar
 from player import *
