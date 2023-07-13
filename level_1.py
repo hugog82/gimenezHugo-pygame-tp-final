@@ -66,22 +66,22 @@ def get_platform ():
 def get_item ():
         
     items_list = []
-    items_list.append(Item(path_amber,0,2,x=100,y=100,width=25,height=25))
-    items_list.append(Item(path_diamond,0,2,x=150,y=100,width=25,height=25))
-    items_list.append(Item(path_ruby,0,2,x=200,y=100,width=25,height=25))
+    # items_list.append(Item(path_amber,0,2,x=100,y=100,width=25,height=25))
+    # items_list.append(Item(path_diamond,0,2,x=150,y=100,width=25,height=25))
+    # items_list.append(Item(path_ruby,0,2,x=200,y=100,width=25,height=25))
     
-    items_list.append(Item(path_amber,0,2,x=950,y=100,width=25,height=25))
-    items_list.append(Item(path_diamond,0,2,x=1000,y=100,width=25,height=25))
-    items_list.append(Item(path_ruby,0,2,x=1050,y=100,width=25,height=25))
+    # items_list.append(Item(path_amber,0,2,x=950,y=100,width=25,height=25))
+    # items_list.append(Item(path_diamond,0,2,x=1000,y=100,width=25,height=25))
+    # items_list.append(Item(path_ruby,0,2,x=1050,y=100,width=25,height=25))
     
-    items_list.append(Item(path_amber,0,2,x=500,y=80,width=25,height=25))
-    items_list.append(Item(path_ruby,0,2,x=550,y=80,width=25,height=25))
-    items_list.append(Item(path_ruby,0,2,x=600,y=80,width=25,height=25))
-    items_list.append(Item(path_amber,0,2,x=650,y=80,width=25,height=25))
+    # items_list.append(Item(path_amber,0,2,x=500,y=80,width=25,height=25))
+    # items_list.append(Item(path_ruby,0,2,x=550,y=80,width=25,height=25))
+    # items_list.append(Item(path_ruby,0,2,x=600,y=80,width=25,height=25))
+    # items_list.append(Item(path_amber,0,2,x=650,y=80,width=25,height=25))
     
-    items_list.append(Item(path_amber,0,2,x=100,y=300,width=25,height=25))
-    items_list.append(Item(path_diamond,0,2,x=150,y=300,width=25,height=25))
-    items_list.append(Item(path_ruby,0,2,x=200,y=300,width=25,height=25))
+    # items_list.append(Item(path_amber,0,2,x=100,y=300,width=25,height=25))
+    # items_list.append(Item(path_diamond,0,2,x=150,y=300,width=25,height=25))
+    # items_list.append(Item(path_ruby,0,2,x=200,y=300,width=25,height=25))
     
     items_list.append(Item(path_amber,0,2,x=950,y=300,width=25,height=25))
     items_list.append(Item(path_diamond,0,2,x=1000,y=300,width=25,height=25))

@@ -5,7 +5,7 @@ from bullet import Bullet
 from background import Background
 
 class Player:
-    def __init__(self,x,y,speed_walk,speed_run,gravity,jump_power,frame_rate_ms,move_rate_ms,jump_height,p_scale=1) -> None:
+    def __init__(self,name,x,y,speed_walk,speed_run,gravity,jump_power,frame_rate_ms,move_rate_ms,jump_height,p_scale=1) -> None:
         self.stay_right = Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Idle__00{0}.png",0,10,False,scale=p_scale)
         self.stay_left = Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Idle__00{0}.png",0,10,True,scale=p_scale)        
         self.walk_right = Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Run__00{0}.png",0,10,False,scale=p_scale)
@@ -18,7 +18,7 @@ class Player:
         self.throw_left = Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Throw__00{0}.png",0,10,True,scale=p_scale)
         self.dead_right =Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Dead__00{0}.png",0,10,False,scale=p_scale)
         self.dead_left =Auxiliar.getSurfaceFromSeparateFiles(IMAGE_PATH+"players/ninja_boy/Dead__00{0}.png",0,10,True,scale=p_scale)
-                
+        self.name = name        
         self.frame = 0
         self.lives = 5
         self.energy = 100

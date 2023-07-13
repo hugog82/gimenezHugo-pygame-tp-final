@@ -16,7 +16,6 @@ from platform import *
 
 pygame.init()
 
-
 SCREEN = pygame.display.set_mode(SCREEN_SIZE)
 pygame.display.set_caption("Menu")
 
@@ -53,8 +52,9 @@ def stage_1():
 
     clock = pygame.time.Clock()
 
-    player = Player(x=SCREEN_WIDTH/2,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
-
+    player = Player(name="Hugo",x=SCREEN_WIDTH/2,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
+    print(player)
+    
     enemy_list = []
     enemy_list.append (Enemy(x=200,y=452,speed_walk=8,speed_run=16,gravity=8,frame_rate_ms=50,move_rate_ms=50,jump_power=30,jump_height=140,p_scale=0.07))
     enemy_list.append (Enemy(x=1000,y=452,speed_walk=8,speed_run=16,gravity=8,frame_rate_ms=50,move_rate_ms=50,jump_power=30,jump_height=140,p_scale=0.07))
@@ -202,6 +202,9 @@ def stage_1():
             flag = False
             stage_flag_1 = True
             pygame.mixer.music.stop()
+            with open("score.css", "a") as file:
+                file.write("Player,Score"  + "\n")
+                file.write(str(player.name) + "," + str(player.score) + "\n")
             winner()
 
         pygame.display.flip()
@@ -228,7 +231,7 @@ def stage_2():
     player_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/CHILD6.mp3")
     arrow_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/throw.mp3")
                                 
-    player = Player(x=SCREEN_WIDTH-SCREEN_WIDTH+25,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
+    player = Player(name="Javier",x=SCREEN_WIDTH-SCREEN_WIDTH+25,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
 
     enemy_list = []
     enemy_list.append (Enemy_3(x=200,y=50,speed_walk=8,speed_run=16))
@@ -371,13 +374,16 @@ def stage_2():
             flag = False
             stage_flag_1 = True
             pygame.mixer.music.stop()
+            with open("score.css", "a") as file:
+                file.write("Player,Score"  + "\n")
+                file.write(str(player.name) + "," + str(player.score) + "\n")
             winner()
                     
         pygame.display.flip()
     
 def stage_3():
     flag = True
-    time_game = 50
+    time_game = 15
 
     event_time_1000_ms = pygame.USEREVENT
     pygame.time.set_timer(event_time_1000_ms,1000)
@@ -398,7 +404,7 @@ def stage_3():
     player_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/CHILD6.mp3")
     arrow_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/throw.mp3")
                                 
-    player = Player(x=SCREEN_WIDTH-SCREEN_WIDTH+25,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
+    player = Player(name="Nadia",x=SCREEN_WIDTH-SCREEN_WIDTH+25,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
 
     enemy_list = []
     enemy_list.append (Enemy_2(x=600,y=380,speed_walk=8))
@@ -525,6 +531,9 @@ def stage_3():
             flag = False
             stage_flag_1 = True
             pygame.mixer.music.stop()
+            with open("score.css", "a") as file:
+                file.write("Player,Score"  + "\n")
+                file.write(str(player.name) + "," + str(player.score) + "\n")
             winner()
                     
         pygame.display.flip()
@@ -535,7 +544,7 @@ def options():
 
         SCREEN.fill("white")
 
-        OPTIONS_TEXT = get_font(45).render("Aca deberian estar las opciones!", True, "Black")
+        OPTIONS_TEXT = get_font(30).render("Aca deberian estar las opciones!", True, "Black")
         OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(600, 200))
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
