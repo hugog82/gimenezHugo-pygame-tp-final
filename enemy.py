@@ -371,7 +371,7 @@ class Enemy_4():
         self.lives = 1
         self.energy = 20
         self.score = 0
-        self.move_x = 0
+        self.move_y = 0
         self.move_y = 0
         self.speed_walk =  speed_walk
         self.animation = self.walk_right
@@ -408,14 +408,14 @@ class Enemy_4():
             self.current_time_move += delta_ms
             if(self.current_time_move >= self.move_rate_ms):
                 self.current_time_move = 0
-                self.change_y(self.move_x)
+                self.change_y(self.move_y)
                 if self.counter <= 12:
-                    self.move_x = -self.speed_walk
+                    self.move_y = -self.speed_walk
                     self.animation = self.walk_right
                     self.counter += 1                 
                     
                 elif self.counter <= 24:
-                    self.move_x = self.speed_walk
+                    self.move_y = self.speed_walk
                     self.animation = self.walk_right
                     self.counter += 1
                 else:

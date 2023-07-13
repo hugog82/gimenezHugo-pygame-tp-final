@@ -207,7 +207,7 @@ def stage_1():
             flag = False
             stage_flag_1 = True
             pygame.mixer.music.stop()
-            with open("score.css", "a") as file:
+            with open("score.csv", "a") as file:
                 file.write("Player,Score"  + "\n")
                 file.write(str(player.name) + "," + str(player.score) + "\n")
             winner()
@@ -386,7 +386,7 @@ def stage_2():
             flag = False
             stage_flag_1 = True
             pygame.mixer.music.stop()
-            with open("score.css", "a") as file:
+            with open("score.csv", "a") as file:
                 file.write("Player,Score"  + "\n")
                 file.write(str(player.name) + "," + str(player.score) + "\n")
             winner()
@@ -548,7 +548,7 @@ def stage_3():
             flag = False
             stage_flag_1 = True
             pygame.mixer.music.stop()
-            with open("score.css", "a") as file:
+            with open("score.csv", "a") as file:
                 file.write("Player,Score"  + "\n")
                 file.write(str(player.name) + "," + str(player.score) + "\n")
             winner()
