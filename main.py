@@ -19,7 +19,8 @@ pygame.init()
 SCREEN = pygame.display.set_mode(SCREEN_SIZE)
 pygame.display.set_caption("Menu")
 
-background = pygame.image.load("assets/Background.png")
+background = pygame.image.load("assets/bg_menu.png")
+background = pygame.transform.scale(background, SCREEN_SIZE)
 stage_flag_1 = False
 stage_flag_2 = False
 stage_flag_3 = False
@@ -32,6 +33,7 @@ def stage_1():
     flag = True
     time_game = 50
     
+    pygame.display.set_caption("Stage 1")
     pygame.mixer.set_num_channels(8)
     pygame.mixer.music.load(IMAGE_PATH+"sounds/Street-Mayhem.mp3")
     pygame.mixer.music.play(-1)
@@ -136,6 +138,9 @@ def stage_1():
             if event.type == pygame.QUIT:   
                 flag = False
                 sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_p:
+                    pause()
             if event.type == event_time_1000_ms:
                 time_game -= 1
             if event.type == event_time_shoot_2000_ms:
@@ -212,15 +217,13 @@ def stage_1():
 def stage_2():
     flag = True
     time_game = 50
-    event_time_1000_ms = pygame.USEREVENT
-    pygame.time.set_timer(event_time_1000_ms,1000)
-
-    event_time_shoot_5000_ms = pygame.USEREVENT +1
-    pygame.time.set_timer(event_time_shoot_5000_ms,5000)
+    
 
     clock = pygame.time.Clock()
     background = pygame.image.load("extras/bg_2.jpg")
     background = pygame.transform.scale(background, SCREEN_SIZE)
+
+    pygame.display.set_caption("Stage 2")
 
     pygame.mixer.set_num_channels(8)
     pygame.mixer.music.load(IMAGE_PATH+"sounds/Into-the-Haunted-Forest.mp3")
@@ -231,6 +234,12 @@ def stage_2():
     player_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/CHILD6.mp3")
     arrow_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/throw.mp3")
                                 
+    event_time_1000_ms = pygame.USEREVENT
+    pygame.time.set_timer(event_time_1000_ms,1000)
+
+    event_time_shoot_5000_ms = pygame.USEREVENT +1
+    pygame.time.set_timer(event_time_shoot_5000_ms,5000)
+    
     player = Player(name="Javier",x=SCREEN_WIDTH-SCREEN_WIDTH+25,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
 
     enemy_list = []
@@ -308,6 +317,9 @@ def stage_2():
             if event.type == pygame.QUIT:   
                 flag = False
                 sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_p:
+                    pause()
             if event.type == event_time_1000_ms:
                 time_game -= 1
             if event.type == event_time_shoot_5000_ms:
@@ -385,15 +397,11 @@ def stage_3():
     flag = True
     time_game = 15
 
-    event_time_1000_ms = pygame.USEREVENT
-    pygame.time.set_timer(event_time_1000_ms,1000)
-
-    event_time_shoot_2000_ms = pygame.USEREVENT +1
-    pygame.time.set_timer(event_time_shoot_2000_ms,5000)
-    
     clock = pygame.time.Clock()
     background = pygame.image.load("extras/bg_3.png")
     background = pygame.transform.scale(background, SCREEN_SIZE)
+
+    pygame.display.set_caption("Stage 3")
 
     pygame.mixer.set_num_channels(8)
     pygame.mixer.music.load(IMAGE_PATH+"sounds/Insane-Gameplay.mp3")
@@ -404,6 +412,12 @@ def stage_3():
     player_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/CHILD6.mp3")
     arrow_sound = pygame.mixer.Sound(IMAGE_PATH+"sounds/throw.mp3")
                                 
+    event_time_1000_ms = pygame.USEREVENT
+    pygame.time.set_timer(event_time_1000_ms,1000)
+
+    event_time_shoot_2000_ms = pygame.USEREVENT +1
+    pygame.time.set_timer(event_time_shoot_2000_ms,5000)
+    
     player = Player(name="Nadia",x=SCREEN_WIDTH-SCREEN_WIDTH+25,y=GROUND_LEVEL,speed_walk=25,speed_run=50,gravity=20,frame_rate_ms=50,move_rate_ms=50,jump_power=100,jump_height=120,p_scale=0.22)
 
     enemy_list = []
@@ -464,6 +478,9 @@ def stage_3():
             if event.type == pygame.QUIT:   
                 flag = False
                 sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_p:
+                    pause()
             if event.type == event_time_1000_ms:
                 time_game -= 1
             if event.type == event_time_shoot_2000_ms:
@@ -578,7 +595,7 @@ def winner():
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
         OPTIONS_BACK = Button(image=None, pos=(600, 400), 
-                            text_input="BACK TO STAGES", font=get_font(75), base_color="Black", hovering_color="Green")
+                            text_input="BACK TO STAGES", font=get_font(45), base_color="Black", hovering_color="Green")
 
         OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
         OPTIONS_BACK.update(SCREEN)
@@ -607,7 +624,7 @@ def loser():
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
         OPTIONS_BACK = Button(image=None, pos=(600, 400), 
-                            text_input="BACK TO STAGES", font=get_font(75), base_color="Black", hovering_color="Green")
+                            text_input="BACK TO STAGES", font=get_font(45), base_color="Black", hovering_color="Green")
 
         OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
         OPTIONS_BACK.update(SCREEN)
@@ -636,7 +653,7 @@ def time_up():
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
         OPTIONS_BACK = Button(image=None, pos=(600, 400), 
-                            text_input="BACK TO STAGES", font=get_font(75), base_color="Black", hovering_color="Green")
+                            text_input="BACK TO STAGES", font=get_font(45), base_color="Black", hovering_color="Green")
 
         OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
         OPTIONS_BACK.update(SCREEN)
@@ -651,6 +668,45 @@ def time_up():
 
         pygame.display.update()
 
+def pause ():
+    clock = pygame.time.Clock()
+    paused = True
+    while paused:
+        SCREEN.fill("white")
+        MENU_MOUSE_POS = pygame.mouse.get_pos()
+
+        PAUSE_TEXT= get_font(80).render("GAME PAUSED!", True, "green")
+        PAUSE_RECT = PAUSE_TEXT.get_rect(center=(600, 150))
+
+        CONTINUE_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(600, 310), 
+                            text_input="CONTINUE", font=get_font(50), base_color="navy", hovering_color="red")
+        MAIN_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(600, 420), 
+                            text_input="MAIN MENU", font=get_font(50), base_color="navy", hovering_color="red")
+        QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(600, 530), 
+                            text_input="QUIT", font=get_font(50), base_color="navy", hovering_color="red")
+
+        SCREEN.blit(PAUSE_TEXT, PAUSE_RECT)
+
+        for button in [CONTINUE_BUTTON, MAIN_BUTTON, QUIT_BUTTON]:
+            button.changeColor(MENU_MOUSE_POS)
+            button.update(SCREEN)
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if CONTINUE_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    paused = False
+                if MAIN_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    main_menu()
+                if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    pygame.quit()
+                    sys.exit()
+
+        pygame.display.update()
+        clock.tick(5)
+
 def stages():
     pygame.mixer.music.stop()
     while True:
@@ -658,19 +714,19 @@ def stages():
 
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
-        MENU_TEXT = get_font(80).render("STAGES", True, "#b68f40")
+        MENU_TEXT = get_font(80).render("STAGES", True, "gold")
         MENU_RECT = MENU_TEXT.get_rect(center=(600, 100))
 
         STAGE_1_BUTTON = Button(image=pygame.image.load("assets/stage_rect.png"), pos=(600, 200), 
-                            text_input="STAGE_1", font=get_font(30), base_color="#d7fcd4", hovering_color="White")
+                            text_input="STAGE_1", font=get_font(30), base_color="navy", hovering_color="red")
         STAGE_2_BUTTON = Button(image=pygame.image.load("assets/stage_rect.png"), pos=(600, 270), 
-                            text_input="STAGE_2", font=get_font(30), base_color="#d7fcd4", hovering_color="White")
+                            text_input="STAGE_2", font=get_font(30), base_color="navy", hovering_color="red")
         STAGE_3_BUTTON = Button(image=pygame.image.load("assets/stage_rect.png"), pos=(600, 340), 
-                            text_input="STAGE_3", font=get_font(30), base_color="#d7fcd4", hovering_color="White")
+                            text_input="STAGE_3", font=get_font(30), base_color="navy", hovering_color="red")
         MAIN_BUTTON = Button(image=pygame.image.load("assets/stage_rect.png"), pos=(600, 410), 
-                            text_input="MAIN", font=get_font(30), base_color="#d7fcd4", hovering_color="White")
+                            text_input="MAIN", font=get_font(30), base_color="navy", hovering_color="red")
         QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit_Rect_Small.png"), pos=(600, 480), 
-                            text_input="QUIT", font=get_font(30), base_color="#d7fcd4", hovering_color="White")
+                            text_input="QUIT", font=get_font(30), base_color="navy", hovering_color="red")
 
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
@@ -709,19 +765,23 @@ def main_menu():
 
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
-        MENU_TEXT = get_font(80).render("MAIN MENU", True, "#b68f40")
-        MENU_RECT = MENU_TEXT.get_rect(center=(600, 100))
+        GAME_TEXT = get_font(50).render("NINJA   VS   ORKS", True, "green")
+        GAME_RECT = GAME_TEXT.get_rect(center=(600, 100))
 
-        PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(600, 200), 
-                            text_input="STAGES", font=get_font(55), base_color="#d7fcd4", hovering_color="White")
-        OPTIONS_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(600, 350), 
-                            text_input="OPTIONS", font=get_font(55), base_color="#d7fcd4", hovering_color="White")
-        QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(600, 500), 
-                            text_input="QUIT", font=get_font(55), base_color="#d7fcd4", hovering_color="White")
+        MENU_TEXT = get_font(80).render("MAIN MENU", True, "gold")
+        MENU_RECT = MENU_TEXT.get_rect(center=(600, 200))
 
+        STAGES_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(600, 310), 
+                            text_input="STAGES", font=get_font(55), base_color="navy", hovering_color="red")
+        OPTIONS_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(600, 420), 
+                            text_input="OPTIONS", font=get_font(55), base_color="navy", hovering_color="red")
+        QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(600, 530), 
+                            text_input="QUIT", font=get_font(55), base_color="navy", hovering_color="red")
+
+        SCREEN.blit(GAME_TEXT, GAME_RECT)
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
-        for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
+        for button in [STAGES_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
             button.changeColor(MENU_MOUSE_POS)
             button.update(SCREEN)
         
@@ -730,7 +790,7 @@ def main_menu():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
+                if STAGES_BUTTON.checkForInput(MENU_MOUSE_POS):
                     stages()
                 if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
                     options()
